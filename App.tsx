@@ -7,7 +7,7 @@
  */
 
 import React, {useState} from 'react';
-import {Alert, Button, StyleSheet, Text, View} from 'react-native';
+import {Alert, Button, StyleSheet, Text, TextInput, View} from 'react-native';
 import {useAuth0, Auth0Provider} from 'react-native-auth0';
 import config from './auth0-configuration';
 import {WebAuthorizeOptions} from "react-native-auth0/lib/typescript/src/types";
@@ -39,16 +39,29 @@ const Home = () => {
         <>
           {user &&
               <View>
+
                <Text>Logged in as {user.name}</Text>
-                <Text>Access Token: {accessToken}</Text>
-                <Text>Id Token: {idToken}</Text>
-                <Text>Refresh Token: {refreshToken}</Text>
+                <Text>AccessToken:</Text>
+                <TextInput value={accessToken} style={stylesText.input} multiline/>
+                <Text>IdToken:</Text>
+                <TextInput style={stylesText.input} multiline value={idToken}></TextInput>
+                <Text>RefreshToken:</Text>
+                <TextInput style={stylesText.input} multiline value={refreshToken}></TextInput>
               </View>
           }
           {!user && <Text>Not logged in</Text>}
         </>
     )
   }
+
+  const stylesText = StyleSheet.create({
+    input: {
+      height: 80,
+      margin: 12,
+      borderWidth: 1,
+      padding: 10,
+    },
+  });
 
 
   if (isLoading) {
