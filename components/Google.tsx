@@ -15,7 +15,7 @@ export const Google = () => {
 
     return (
         <View style={styles.container}>
-            <Button title="Open Modal" onPress={handleButtonPress} />
+            <Button title="Open Google in Browser" onPress={handleButtonPress} />
 
             <Modal
                 animationType="slide"

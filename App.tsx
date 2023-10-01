@@ -13,6 +13,7 @@ import {Home} from "./components/Home";
 import {Goal} from "./components/Goal";
 import {StyleSheet, View} from "react-native";
 import {Google} from "./components/Google";
+import GoogleWebview from "./components/GoogleWebview";
 
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
                 <Home/>
                 <Goal></Goal>
                 <Google></Google>
+                <GoogleWebview/>
             </View>
 
         </Auth0Provider>
